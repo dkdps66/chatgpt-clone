@@ -1,4 +1,4 @@
 streamlit
 langchain
 langchain_aws
-boto3
+langgraph
