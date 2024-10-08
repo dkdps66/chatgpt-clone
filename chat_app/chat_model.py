@@ -9,6 +9,9 @@ class ChatModel:
         #{'messages': [msg1, msg2, msg3]}
         self.graph_builder =StateGraph(MessagesState)
         self.graph_builder.add_node('model', self._call_model)
+        self.graph_builder.add_edge(START, 'model')
+        self.graph_builder.add_edge('model', END)
+        self.graph = self.graph_builder.compile()
 
 
     def _call_model(self, state: MessagesState):
